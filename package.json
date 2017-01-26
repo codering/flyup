@@ -1,11 +1,12 @@
 {
-  "name": "roadhog-ie8",
+  "name": "flyup",
   "version": "0.0.1",
   "description": "Cli tool for serve and build react app, based on create-react-app, support JSON pattern config.",
   "bin": {
-    "roadhog": "./bin/roadhog.js"
+    "flyup": "./bin/flyup.js"
   },
   "keywords": [
+    "flyup",
     "roadhog",
     "react",
     "cli",
@@ -17,7 +18,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codering/roadhog/issues"
+    "url": "https://github.com/codering/flyup/issues"
   },
   "files": [
     "bin",
