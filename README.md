@@ -5,4 +5,12 @@
 [![NPM downloads](http://img.shields.io/npm/dm/flyup.svg?style=flat)](https://npmjs.org/package/flyup)
 [![Dependencies](https://david-dm.org/codering/flyup/status.svg)](https://david-dm.org/codering/flyup)
 
-forked from [roadhog](https://github.com/sorrycc/roadhog)
+base on [roadhog](https://github.com/sorrycc/roadhog)
+
+
+```json
+    {
+        "start": "flyup server --ie8 --no-open",
+        "build": "flyup build --ie8"
+    }
+```
