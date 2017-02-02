@@ -63,6 +63,16 @@ export function build(argv) {
     process.env.NODE_ENV,
   );
 
+  if (argv.ie8) {
+    config.postLoaders = [
+        {
+          test: /\.(js|jsx)$/,
+          include: [paths.appSrc,paths.appNodeModules],
+          loader: 'es3ify',
+        }
+    ] 
+  }
+
   return new Promise((resolve) => {
     // First, read the current file sizes in build directory.
     // This lets us display how much they changed later.

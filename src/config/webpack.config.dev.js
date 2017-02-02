@@ -109,11 +109,6 @@ export default function (config, cwd) {
           },
         },
       ],
-      postLoaders: config.supportIE8 ? [{
-        test: /\.(js|jsx)$/,
-        include: paths.appSrc,
-        loader: 'es3ify',
-      }] : [],
     },
     babel: {
       babelrc: false,
@@ -135,7 +130,7 @@ export default function (config, cwd) {
             '>1%',
             'last 4 versions',
             'Firefox ESR',
-            'not ie < 9', // React doesn't support IE8 anyway
+            'not ie < 8',
           ],
         }),
       ]

@@ -127,7 +127,7 @@ export default function (args, appBuild, config, paths) {
             '>1%',
             'last 4 versions',
             'Firefox ESR',
-            'not ie < 9', // React doesn't support IE8 anyway
+            'not ie < 8',
           ],
         }),
       ]
@@ -146,15 +146,15 @@ export default function (args, appBuild, config, paths) {
       .concat(
         debug ? [] : new webpack.optimize.UglifyJsPlugin({
           compress: {
-            screw_ie8: !config.supportIE8, // need support IE8
+            screw_ie8: false,
             warnings: false,
           },
           mangle: {
-            screw_ie8: !config.supportIE8,
+            screw_ie8: false,
           },
           output: {
             comments: false,
-            screw_ie8: !config.supportIE8,
+            screw_ie8: false,
           },
         }),
       )

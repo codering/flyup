@@ -37,7 +37,7 @@ let config;
 
 function clearConsoleWrapped() {
   if (process.env.CLEAR_CONSOLE !== 'NONE') {
-    clearConsole();
+   clearConsole();
   }
 }
 
@@ -57,6 +57,22 @@ function readWebpackConfig() {
     require('./config/webpack.config.dev')(rcConfig, cwd),
     process.env.NODE_ENV,
   );
+  if (argv.ie8) {
+    const {entry} = config;
+    // remove hot update
+    config.entry = Object.keys(entry).reduce((memo, name) => {
+      memo[name] = entry[name].filter(path => path.indexOf('webpackHotDevClient') === -1);
+      return memo;
+    },{})
+    // es3ify
+    config.module.postLoaders = [
+        {
+          test: /\.(js|jsx)$/,
+          include: [paths.appSrc, paths.appNodeModules],
+          loader: 'es3ify',
+        }
+    ]
+  }
 }
 
 

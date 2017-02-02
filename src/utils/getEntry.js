@@ -44,7 +44,7 @@ export function getEntries(files, isProduction) {
 
 export default function (config, appDirectory) {
   const entry = config.entry;
-  const isProduction = process.env.NODE_ENV === 'production' || !!config.supportIE8;
+  const isProduction = process.env.NODE_ENV === 'production';
   const files = entry ? getFiles(entry, appDirectory) : [DEFAULT_ENTRY];
   return getEntries(files, isProduction);
 }
