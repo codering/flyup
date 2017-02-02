@@ -65,12 +65,12 @@ export function build(argv) {
 
   if (argv.ie8) {
     config.postLoaders = [
-        {
-          test: /\.(js|jsx)$/,
-          include: [paths.appSrc,paths.appNodeModules],
-          loader: 'es3ify',
-        }
-    ] 
+      {
+        test: /\.(js|jsx)$/,
+        include: [paths.appSrc, paths.appNodeModules],
+        loader: 'es3ify',
+      },
+    ];
   }
 
   return new Promise((resolve) => {
